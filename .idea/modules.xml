@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java testing.iml" filepath="$PROJECT_DIR$/.idea/Java testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session 2-condition-loop/Session 2-condition-loop.iml" filepath="$PROJECT_DIR$/Session 2-condition-loop/Session 2-condition-loop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/session1-java-coban/session1-java-coban.iml" filepath="$PROJECT_DIR$/session1-java-coban/session1-java-coban.iml" />
+    </modules>
+  </component>
+</project>
