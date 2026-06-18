@@ -9,7 +9,7 @@ public class Main {
         // LAP TRINH CO BAN
         // 1. kHAI BÁO BIẾN
         // 2. Toan tu : + , - , * , / , %
-        // 3. phép toan so sánh :  > , >= , < , <= , == , !=
+        // 3. phép toan so sánh :  > , >= , < , <= , == , !=git
         // 4. phép toán nối các điều kiện : && , ||
         // 5.  condition ,loop
         // 6. function
