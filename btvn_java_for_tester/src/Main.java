@@ -8,16 +8,16 @@ public class Main {
         // BTVN cap 1
         // bai 3
         Scanner sc = new Scanner(System.in);
-//        System.out.print("Nhap vao so n: ");
-//        int n = sc.nextInt();
-//        int sum = 0;
-//        for (int i = 0; i <= n; i++) {
-//            if (i % 2 == 0) {
-//                sum += i;
-//            }
-//        }
-//
-//        System.out.println("Tong cac so chan tu 0 den " + n + " la: " + sum);
+        System.out.print("Nhap vao so n: ");
+        int n = sc.nextInt();
+        int sum = 0;
+        for (int i = 0; i <= n; i++) {
+        if (i % 2 == 0) {
+        sum += i;
+          }
+    }
+
+      System.out.println("Tong cac so chan tu 0 den " + n + " la: " + sum);
 
 
         // bai 4
