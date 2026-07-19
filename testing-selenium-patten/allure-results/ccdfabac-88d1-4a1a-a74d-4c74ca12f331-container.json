@@ -1,0 +1,1 @@
+{"uuid":"ccdfabac-88d1-4a1a-a74d-4c74ca12f331","name":"test.BaseTest.setUp","children":["746aaab3-4f70-45ba-b7aa-bfdd25d063cf"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1783428888235,"stop":1783428889175}],"afters":[],"start":1783428888235,"stop":1783428889175}
