@@ -20,6 +20,10 @@ public class DriverFactory {
         if (browser == null || browser.isEmpty()) {
             browser = "chrome";
         }
+        // handle thêm cho việc chạy test case trên CI
+
+        boolean isHeadless = ConfigReader.getBoolean("headless");
+               // System.getProperty("headless", "false")
 
         switch (browser) {
 
@@ -41,11 +45,11 @@ public class DriverFactory {
                 ChromeOptions chromeOptions = new ChromeOptions();
 
                 // Kiem tra headless mode cho CI/CD
-                boolean isHeadless = Boolean.parseBoolean(
-                        System.getProperty("headless", "false")
+
                 );
                 if (isHeadless) {
-                    chromeOptions.addArguments("--headless");
+                    chromeOptions.addArguments("--headless=new");
+                    chromeOptions.addArguments("--disable-gpu");
                     chromeOptions.addArguments("--no-sandbox");
                     chromeOptions.addArguments("--disable-dev-shm-usage");
                     chromeOptions.addArguments("--window-size=1920,1080");
@@ -55,7 +59,7 @@ public class DriverFactory {
                     Map<String, String> mobileEmulation = new HashMap<>();
                     mobileEmulation.put("deviceName", deviceName.trim());
                     chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-                } else {
+                } else if(!isHeadless){
                     chromeOptions.addArguments("--start-maximized");
                 }
 
