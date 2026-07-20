@@ -45,8 +45,6 @@ public class DriverFactory {
                 ChromeOptions chromeOptions = new ChromeOptions();
 
                 // Kiem tra headless mode cho CI/CD
-
-                );
                 if (isHeadless) {
                     chromeOptions.addArguments("--headless=new");
                     chromeOptions.addArguments("--disable-gpu");
