@@ -21,9 +21,9 @@ public class DriverFactory {
             browser = "chrome";
         }
         // handle thêm cho việc chạy test case trên CI
-
-        boolean isHeadless = ConfigReader.getBoolean("headless");
-               // System.getProperty("headless", "false")
+        boolean isHeadless = Boolean.parseBoolean(
+                ConfigReader.get("headless")
+        );
 
         switch (browser) {
 
