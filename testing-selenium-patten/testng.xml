@@ -5,8 +5,7 @@
         <classes>
             <class name="test.LoginTest" />
             <class name="test.AdminTest" />
-            <class name="test.BaseTest" />
-            <class name="test.DashBoardTest" />
+            <class name="test.UploadTest" />
         </classes>
     </test>
 </suite>
