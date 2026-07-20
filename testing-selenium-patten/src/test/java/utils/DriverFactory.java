@@ -22,7 +22,7 @@ public class DriverFactory {
         }
         // handle thêm cho việc chạy test case trên CI
         boolean isHeadless = Boolean.parseBoolean(
-                ConfigReader.get("headless")
+                System.getProperty("headless", "false")
         );
 
         switch (browser) {
