@@ -40,7 +40,7 @@ jobs:
 
       - name: Run tests
         working-directory: testing-selenium-patten   # ← THEM DONG NAY
-        run: mvnd test -Dbrowser=chrome -Dheadless=true
+        run: mvn test -Dbrowser=chrome -Dheadless=true
 
       - name: Upload Allure Report
         if: always()
