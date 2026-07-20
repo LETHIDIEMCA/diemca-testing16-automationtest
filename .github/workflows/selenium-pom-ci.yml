@@ -15,38 +15,36 @@
 # 8: lấy số liệu report => testng-results.xml
 # 9: gửi report về slack
 name: Selenium POM CI
-#B1 : trigger chay workfows
+
 on:
   push:
     branches:
       - main
-    paths:
-      - "java testing -selenium-pom/**"
-      - ".github/workflows/selenium-pom-ci.yml"
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "java testing -selenium-pom/**"
-      - ".github/workflows/selenium-pom-ci.yml"
- # sẽ tự động vào folder cần chạy
-defaults:
-  run:
-    working-directory: java testing-selenium-pom
-jobs:
-   selenium-tests :
-     runs-on: ubuntu-latest
-     steps:
-       - name : Checkout code
-         uses: actions/checkout@v4
 
-       - name : Set up JDK 21
-         uses: actions/setup-java@v4
-         with:
-           distribution: 'temurin'
-           java-version: '21'
-           cache: 'maven'
-       - name: Install Chrome
-         uses: browser-actions/setup-chrome@v1
-       - name: Run Selenium Tests
-         run: mvn -B test -Dheadless==true -Djava.awt.headless==true
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Run tests
+        working-directory: testing-selenium-patten   # ← THEM DONG NAY
+        run: mvnd test -Dbrowser=chrome -Dheadless=true
+
+      - name: Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: testing-selenium-patten/target/site/allure-maven-plugin
