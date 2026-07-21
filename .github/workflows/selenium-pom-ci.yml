@@ -41,10 +41,24 @@ jobs:
       - name: Run tests
         working-directory: testing-selenium-patten   # ← THEM DONG NAY
         run: mvn test -Dbrowser=chrome -Dheadless=true
+      - name : Generate Allure Report
+        run : echo "Not yet implemented"
+      - name: Upload Allure Report
+        run: echo "Not yet implemented"
+      - name: Sent Report to Slack
+        if: always()
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": "Done"
+            }
 
       - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: testing-selenium-patten/target/site/allure-maven-plugin
+          path: testing-selenium-patten/target/site
