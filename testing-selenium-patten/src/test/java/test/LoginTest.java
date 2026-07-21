@@ -2,17 +2,32 @@ package test;
 
 import io.qameta.allure.*;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import page.BasePage;
 import page.LoginPage;
 import utils.ConfigReader;
+import utils.CsvReader;
 import utils.ScreenshotUtil;
+
+import java.io.IOException;
+import java.util.List;
 
 // Epic -> Feature -> Story -> Testcase
 @Epic("OrangeHRM web")
 @Feature("Authentication")
 
 public class LoginTest extends BaseTest {
+    @DataProvider(name = "loginData")
+    public Object[][] loginDataProvider() throws IOException {
+        // Doc CSV va convert sang Object[][] chi trong 2 dong
+        List<String[]> rows = CsvReader.readCsv("src/test/resources/loginData.csv");
+        return CsvReader.toDataProviderArray(rows);   // ✅ dung method co san
+    }
+    @Test(dataProvider = "loginData")
+    public void testLogin(String username, String password, String expected) {
+        // username, password, expected tu file CSV
+    }
     @Story(" Login")
     @Severity(SeverityLevel.BLOCKER)
     @Description ("Login Success with Admin username and ***** and redirect to Dashboard page")

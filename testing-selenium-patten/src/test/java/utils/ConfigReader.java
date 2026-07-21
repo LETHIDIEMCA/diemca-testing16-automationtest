@@ -20,7 +20,7 @@ public class ConfigReader {
         }
         return  properties;
 
-        // define functione de get value tu config properties
+        // define function de get value tu config properties
 
 
             }

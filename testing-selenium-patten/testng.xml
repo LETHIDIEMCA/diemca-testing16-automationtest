@@ -6,6 +6,9 @@
             <class name="test.LoginTest" />
             <class name="test.AdminTest" />
             <class name="test.UploadTest" />
+            <class name="test.BaseTest" />
+            <class name="test.DashBoardTest" />
+
         </classes>
     </test>
 </suite>
