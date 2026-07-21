@@ -53,7 +53,7 @@ jobs:
           webhook-type: incoming-webhook
           payload: |
             {
-              "text": "Done"
+             "text": "🔔 Selenium Test CI completed!\nBranch: main\nStatus: Check GitHub Actions for details"
             }
 
       - name: Upload Allure Report
