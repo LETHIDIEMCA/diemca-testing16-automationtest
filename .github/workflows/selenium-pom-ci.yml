@@ -35,7 +35,7 @@ on:
 # sẽ tự động cd vào folder cần chạy
 defaults:
   run:
-    working-directory: testing16-selenium-pom
+    working-directory: testing-selenium-patten
 
 jobs:
   selenium-tests:
@@ -66,7 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: testing16-selenium-pom/target/site/allure-maven-plugin
+          path: testing-selenium-patten/target/site/allure-maven-plugin
           retention-days: 7 # tự xóa artifact sau 7 ngày để đỡ tốn dung lượng
 
       - name: Read TestNG Results
